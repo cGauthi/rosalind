@@ -1,5 +1,5 @@
 # rosalind
-Solving random problems on the internet
+Problems from http://rosalind.info/problems/locations/
 
 
 1) Counting DNA nucleotides - nuc_count.py
