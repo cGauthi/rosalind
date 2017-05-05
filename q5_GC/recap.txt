@@ -1,0 +1,14 @@
+My solution was pretty brute force and ugly.
+
+LudditeCyborg wrote this in Python 2.7.  Elegant and effective use of dictionaries and .split() to solve.  Learned about the flexibility of .split().  
+
+dnafile = open('rosalind_gc.txt', 'r')
+raw = dnafile.read()
+d = {}
+for seqblock in raw.split(">")[1:]:
+    parts = seqblock.split("\n")
+    fasta = parts[0]
+    seq = ''.join(parts[1:])
+    gc = 100 * ( seq.count("G") + seq.count("C") ) / float(len(seq))
+    d[gc] = fasta
+print d[max(d)], max(d)
