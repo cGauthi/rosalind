@@ -1,0 +1,13 @@
+This was a pretty straighforward problem and I applied a pretty straightforward iteration solution.
+
+A more advanced solution was provided by Pavel Perestoronin in the form of 
+sum(map(operator.ne, s1, s2))
+I have used sum() before but had not come across map() or the operator module and .ne.
+
+map() - map(function, iterable, ...) 
+  - applies a function to every item of iterable and returns a list of the results
+operator - standard operators as functions
+  .ne(a, b) -> Not Equal - checks to see if a and b are equal
+  - Operator can be modified with any comparison (.lt, .le, .ge, etc..)
+  
+These are not complicated tools, but I had not used them before.  Together, they can perform the work of multiple lines of code in one concise line.  Learn more of these to be able to create more elegant solutions.
