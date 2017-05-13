@@ -1,0 +1,20 @@
+I do not have a strong background with statistics and probability so this was a question that I had to sit back and think about for a while.  I overcomplicated the first iteration and had a multitiered tree with probability calculations threaded throughout it.  None of it was necessary.  Came back a couple of days later and the way forward became clear even it is not overly concise.  
+
+All the algorithm does is take population information from the user and plug it into a series of functions.  
+  - homocross() calculates the probability of a cross with a homozygous dominant organism and any other organism
+  - heterocross() calculates the probability of a cross between two heterozygous organisms
+  - heterorecross() calculates the probability of a cross between a heterozygous and homozygous recessive organism
+
+Once processed, it then adds a .75 modifier to heterocross() results and a .5 modifier to heterorecross() results to account for the probabilities of producing a dominant phenotype in the progeny.  
+
+Then it adds it all together and prints the result.
+
+Advanced variation (provided by Myke and sharno):
+def firstLaw(k,m,n):
+    N = float(k+m+n)
+    return 1 - ( m*n + .25*m*(m-1) + n*(n-1) ) / ( N*(N-1) )
+    
+This is pretty much what I did except approached in a more clever manner.  He found the probability of the cross being recessive phenotype and then subtracted it from 1, thus giving the correct answer with less work as there are less potential matches for a recessive phenotype outcome.  He was also able to greatly simplify the algorithm due to this reduction in factors.
+
+Lessons Learned:
+Simplify the problem as far as you can while still being able to achieve a desired outcome.  Sometimes all this requires is looking at the problem from a different angle.
