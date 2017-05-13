@@ -8,3 +8,4 @@ Problems from http://rosalind.info/problems/locations/
 4) Rabbits and Recurrence Relations
 5) Computing GC content in FASTA
 6) Counting point mutations in DNA strings
+7) Calculation probability of dominant phenotypes
