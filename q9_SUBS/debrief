@@ -1,0 +1,35 @@
+The purpose of this program was to find the starting positions of motifs within a given string of DNA.  
+
+Personally, I like regex and this problem seemed tailor-made for a regex solution.  My solution defines a pattern, searches the string for that pattern, then returns a list of positions that that pattern is present in the string.  Pretty straightforward and effective.
+
+Alternative Solution (credit to Leandro Lima)
+This alternative solution solved the problem efficiently without the use of regex.  It works fine and is clean.
+
+s1,s2 = open('rosalind_subs.txt').read().split('\r\n')
+
+for i in range(len(s1)):
+    if s1[i:].startswith(s2):
+        print i+1,
+        
+I liked how he opened the file, split it in half, then stored it in two variables with one concise line of code.  I'll need to remember that as it seems pretty useful.  The algorithm just iterates over the string s1 and if it finds a matching slice, then it prints the position.  Nice and simple.
+
+Key Concepts:
+- regex
+
+Lessons Learned:
+- re.finditer() vs re.search()
+    - This is something I have to review every time.  finditer() returns an iterable object (good for loops) of all matches (non-overlapping).  search() returns a match object of the FIRST instance of the pattern.  findall() returns a match object of ALL instances (non-overlapping) in the form of a list of strings.
+    
+- lookahead assertions
+  - (?=pattern)
+  - This allows for matching an object without consuming a string in the process
+  - Allows for overlapping matches.
+  
+- re.compile(pattern)
+  - i.e.) motif = re.compile('ATAT')
+          motif.finditer(string)
+  - compiles a pattern into a regex object
+  - allows methods such as search() and finditer() to be called on defined variables
+  
+- print() tricks
+  - I had to remove the formatting of the loc_list (brackets and commas) in order to be a viable submission.  This was done by print(*loc_list, sep=' ').  It printed all of the data in loc_list without the formatting and separated the elements with a space.  Useful to know.
