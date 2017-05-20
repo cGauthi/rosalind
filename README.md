@@ -9,3 +9,4 @@ Problems from http://rosalind.info/problems/locations/
 5) Computing GC content in FASTA
 6) Counting point mutations in DNA strings
 7) Calculation probability of dominant phenotypes
+8) Tranlating RNA strings into amino acids
