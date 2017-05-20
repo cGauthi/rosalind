@@ -10,3 +10,4 @@ Problems from http://rosalind.info/problems/locations/
 6) Counting point mutations in DNA strings
 7) Calculation probability of dominant phenotypes
 8) Translating RNA strings into amino acids
+9) Finding starting positions of motifs in DNA
