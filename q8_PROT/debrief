@@ -1,0 +1,9 @@
+My solution here worked well and was in line with other submissions.
+
+First, you define the amino acid dictionary which will be used to define the codons.  Then you loop through the input string by blocks of three and decode as you go.  Add the decoded codons onto a growing string which, when complete, will be your final solution.
+
+There was not much to this one outside of rehashing the basics of input/output and dictionary methods.  I did miss a codon in the dictionary (due to lapsed attention???) and it caused me to get the solution wrong.  I thought it was due to line breaks being added in the terminal.  Turned out to just need an addition to the dictionary. 
+
+Lessons Learned:
+Make sure your dictionaries are correct!
+ 
