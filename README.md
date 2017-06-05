@@ -11,3 +11,4 @@ Problems from http://rosalind.info/problems/locations/
 7) Calculation probability of dominant phenotypes
 8) Translating RNA strings into amino acids
 9) Finding starting positions of motifs in DNA
+10) Generate consensus strand from multiple DNA strands in FASTA format.
