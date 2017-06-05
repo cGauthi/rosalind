@@ -1,0 +1,35 @@
+The purpose of this program was to take several DNA strands from a FASTA file and generate a consensus strand utilizing a profile matrix.  This was a challenge for me as it involved multiple matrices which I am not very experienced with.  The concept behind them (list of lists) is not complicated, but generating them to accurately contain the proper information took some trial an error.  My solution heavily relies on for loops and I was curious to see what others put together.
+
+Anyhow, the workflow:
+1) Read and process the FASTA document to store all of the DNA strands in a matrix called dna_mtx.
+  - It is important to clip and reset the strings at the appropriate point in the workflow.  Otherwise, you will run into limit errors when trying to generate matrices further downstream.
+2) Create the properly sized profile matrix (cons_mtx) based on the size of the strings you are comparing.
+3) Populate the profile matrix with the appropriate nucleotide counts from dna_mtx.
+4) Run a loop to go through each position and store the individual nucleotide counts for that position.  Store the information in a list called base_count.
+5) Determine which nucleotide has the most counts with max() function on the base_count list.  Append the high nucleotide to the consensus sequence.
+6) Print out fully compiled consensus sequence and profile matrix.
+
+Advanced solution (provided by Darkstar):
+
+strands = [x.strip() for x in f.readlines()]
+
+matrix = zip(*strands)
+
+profile_matrix = map(lambda x: dict((base, x.count(base)) for base in "ACGT"), matrix)
+
+consensus = [max(x,key = x.get) for x in profile_matrix]
+
+print "".join(consensus);
+
+for base in "ACGT":
+    print base+":",
+    for x in profile_matrix:
+        print x[base],
+    print ""
+    
+
+Seeing some of the solutions makes me feel rather inadequate about my current ability to synthesize data with minimal code.  There were several good solution that were about this size (some smaller!).  Anyhow, through clever use of zip(), map(), and dictionaries, Darkstar was able to generate all of his required information using 4 lines of code.  Incredible.
+
+Lessons Learned:
+Begin to start thinking about how to tie together different functions and data structures in order to minimize coding.  This is a prime example of how loops work OK, but are not elegant at all.  C
+Common functions are the map() and zip().  Get comfortable with the capabilities of these as well as dictionaries.
